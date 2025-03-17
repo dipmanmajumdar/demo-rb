@@ -1,13 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML with CSS</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Resume Builder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple paragraph to demonstrate how to style HTML elements using CSS. You can change the font, color, size, and more to make your webpage look attractive.</p>
+  <div class="container">
+    <header class="glass-effect">
+      <h1>Online Resume Builder</h1>
+      <p>Create your professional resume in minutes!</p>
+    </header>
+
+    <section class="form-section">
+      <form id="resumeForm">
+        <!-- Contact Information -->
+        <h2>Contact Information</h2>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john.doe@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+1 234 567 890" required>
+        </div>
+        <div class="form-group">
+          <label for="linkedin">LinkedIn Profile URL (optional)</label>
+          <input type="url" id="linkedin" placeholder="https://linkedin.com/in/johndoe">
+        </div>
+        <div class="form-group">
+          <label for="portfolio">Portfolio/Website URL (optional)</label>
+          <input type="url" id="portfolio" placeholder="https://johndoe.com">
+        </div>
+        <div class="form-group">
+          <label for="location">Location (City, State - optional)</label>
+          <input type="text" id="location" placeholder="New York, NY">
+        </div>
+
+        <!-- Add Your Image -->
+        <div class="form-group">
+          <label for="imageUpload" class="image-upload-label">Upload Your Image</label>
+          <input type="file" id="imageUpload" accept="image/*">
+          <img id="preview" class="preview-image" src="#" alt="Your Image" style="display: none;">
+        </div>
+
+        <!-- Professional Summary -->
+        <h2>Professional Summary/Objective</h2>
+        <div class="form-group">
+          <label for="summary">Briefly describe your career goals and key skills (2-3 sentences)</label>
+          <textarea id="summary" placeholder="Experienced software engineer with 5+ years of expertise in web development..."></textarea>
+        </div>
+
+        <!-- Skills -->
+        <h2>Skills</h2>
+        <div class="form-group">
+          <label for="skills">Technical and Soft Skills (comma-separated)</label>
+          <textarea id="skills" placeholder="JavaScript, Python, React, Teamwork, Leadership"></textarea>
+        </div>
+
+        <!-- Work Experience -->
+        <h2>Work Experience</h2>
+        <div class="form-group">
+          <label for="jobTitle1">Job Title</label>
+          <input type="text" id="jobTitle1" placeholder="Software Engineer">
+        </div>
+        <div class="form-group">
+          <label for="company1">Company Name</label>
+          <input type="text" id="company1" placeholder="ABC Corp">
+        </div>
+        <div class="form-group">
+          <label for="dates1">Dates of Employment (Month/Year - Month/Year)</label>
+          <input type="text" id="dates1" placeholder="Jan 2020 - Present">
+        </div>
+        <div class="form-group">
+          <label for="responsibilities1">Responsibilities and Achievements</label>
+          <textarea id="responsibilities1" placeholder="Developed and maintained web applications using React and Node.js..."></textarea>
+        </div>
+
+        <!-- Add More Work Experience -->
+        <button type="button" class="animated-button" id="addWorkExperience">Add Another Work Experience</button>
+
+        <!-- Education -->
+        <h2>Education</h2>
+        <div class="form-group">
+          <label for="degree">Degree Name/Major</label>
+          <input type="text" id="degree" placeholder="Bachelor of Science in Computer Science">
+        </div>
+        <div class="form-group">
+          <label for="university">University/Institution Name</label>
+          <input type="text" id="university" placeholder="XYZ University">
+        </div>
+        <div class="form-group">
+          <label for="gradDate">Graduation Date (Month/Year)</label>
+          <input type="text" id="gradDate" placeholder="May 2020">
+        </div>
+        <div class="form-group">
+          <label for="gpa">GPA (optional)</label>
+          <input type="text" id="gpa" placeholder="3.8">
+        </div>
+        <div class="form-group">
+          <label for="coursework">Relevant Coursework/Projects (optional)</label>
+          <textarea id="coursework" placeholder="Data Structures, Algorithms, Web Development"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="honors">Honors/Awards (optional)</label>
+          <textarea id="honors" placeholder="Dean's List, Academic Scholarship"></textarea>
+        </div>
+
+        <!-- Certifications -->
+        <h2>Certifications (optional)</h2>
+        <div class="form-group">
+          <label for="certifications">Certification Name, Issuing Organization, Date Earned</label>
+          <textarea id="certifications" placeholder="AWS Certified Developer, Amazon Web Services, Jan 2022"></textarea>
+        </div>
+
+        <!-- Projects -->
+        <h2>Projects (optional)</h2>
+        <div class="form-group">
+          <label for="projects">Project Name, Brief Description, Technologies Used</label>
+          <textarea id="projects" placeholder="Resume Builder, A web app to create professional resumes, HTML, CSS, JavaScript"></textarea>
+        </div>
+
+        <!-- Languages -->
+        <h2>Languages (optional)</h2>
+        <div class="form-group">
+          <label for="languages">Languages and Proficiency Level</label>
+          <textarea id="languages" placeholder="English (Native), Spanish (Conversational)"></textarea>
+        </div>
+
+        <!-- Centered Generate Resume Button -->
+        <div class="button-container">
+          <button type="submit" class="animated-button">Generate Resume</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Resume Preview -->
+    <section class="resume-preview glass-effect" id="resumePreview">
+      <h2>Your Resume Preview</h2>
+      <div id="resumeContent"></div>
+      <button id="downloadBtn" class="animated-button">Download Resume</button>
+    </section>
+  </div>
+  <footer style="text-align: center; padding: 20px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; margin-top: 40px;">
+    <h3 style="margin-bottom: 10px;"><b><i>🪶 Developed by Dee</i></b></h3>
+    <div style="display: flex; justify-content: center; gap: 15px;">
+      <a href="https://instagram.com/dipmanmajumdar" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px;">
+      </a>
+      <a href="https://github.com/dipmanmajumdar" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 24px; height: 24px;">
+      </a>
+    </div>
+  </footer>
+    <script src="script.js"></script>
 </body>
 </html>
