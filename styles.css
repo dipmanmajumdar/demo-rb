@@ -1,23 +1,206 @@
-/* Style for the body */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Times New Roman', serif;
     margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-}
-
-/* Style for the heading */
-h1 {
-    color: #4CAF50;
-    font-size: 2.5em;
+  }
+  
+  header {
     text-align: center;
-}
-
-/* Style for the paragraph */
-p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    text-align: justify;
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+  /* Glass Effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Styles */
+  .form-section {
+    margin-bottom: 40px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+  }
+  
+  /* Adjusted input box size with shadow and animation */
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 50%; /* Adjusted width to 50% */
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    margin: 0 auto; /* Center the input boxes */
+    display: block; /* Ensure inputs take up their own line */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on focus */
+    transform: scale(1.02); /* Slight zoom effect on focus */
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Image Upload - Centered with shadow and animation */
+  #imageUpload {
+    display: none;
+  }
+  
+  .image-upload-label {
+    display: block; /* Ensure it takes its own line */
+    padding: 10px 20px;
+    background: #ff6f61;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto; /* Center the button */
+    text-align: center; /* Center text inside the button */
+    width: fit-content; /* Fit content width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  .image-upload-label:hover {
+    background: #ff3b2f;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  .preview-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .preview-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  /* Animated Button with shadow */
+  .animated-button {
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Ensure buttons take up their own line */
+    margin: 0 auto; /* Center the buttons */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  .animated-button:hover {
+    transform: scale(1.1);
+    background: #ff3b2f;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  /* Center the Generate Resume Button */
+  .button-container {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
-}
+  }
+  
+  /* Resume Preview */
+  .resume-preview {
+    display: none;
+    margin-top: 40px;
+  }
+  
+  .resume-preview h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  #resumeContent {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  #resumeContent:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Add pulse animation to the header */
+  header h1 {
+    animation: fadeIn 2s ease-in-out, pulse 3s infinite;
+  }
+  
+  /* Brush Emoji Cursor */
+  body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text x="0" y="20" font-size="20">🪶️</text></svg>'), auto;
+  }
